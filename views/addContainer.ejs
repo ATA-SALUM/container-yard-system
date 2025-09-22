@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add Container</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Add Container</h2>
+        <form action="/add" method="POST">
+            <label>Container Number</label>
+            <input type="text" name="number" required>
+
+            <label>Origin</label>
+            <input type="text" name="origin" required>
+
+            <label>Destination</label>
+            <input type="text" name="destination" required>
+
+            <label>Row (1 - 5)</label>
+            <input type="number" name="rowPos" min="1" max="5" required>
+
+            <label>Column (1 - 5)</label>
+            <input type="number" name="colPos" min="1" max="5" required>
+
+            <label>Owner</label>
+            <input type="text" name="owner" required>
+
+            <button type="submit">Add Container</button>
+        </form>
+    </div>
+</body>
+
+</html>

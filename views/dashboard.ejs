@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <span>Container Yard</span>
+        <div class="tabs">
+            <a href="/dashboard"><i class="fas fa-home"></i> Home</a>
+            <a href="/add"><i class="fas fa-plus-circle"></i> Add</a>
+            <a href="/search"><i class="fas fa-search"></i> Search</a>
+            <a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+    </header>
+    <div class="container">
+        <h2>Welcome,
+            <%= user %>!</h2>
+        <h3>All Containers</h3>
+        <% if (containers.length > 0) { %>
+            <% containers.forEach(c => { %>
+                <div class="card">
+                    <p><b>Number:</b>
+                        <%= c.number %>
+                    </p>
+                    <p><b>Origin:</b>
+                        <%= c.origin %>
+                    </p>
+                    <p><b>Destination:</b>
+                        <%= c.destination %>
+                    </p>
+                    <p><b>Row:</b>
+                        <%= c.rowPos %> | <b>Col:</b>
+                            <%= c.colPos %>
+                    </p>
+                    <p><b>Owner:</b>
+                        <%= c.owner %>
+                    </p>
+                </div>
+                <% }) %>
+                    <% } else { %>
+                        <p>No containers yet.</p>
+                        <% } %>
+    </div>
+</body>
+
+</html>

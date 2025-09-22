@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Search Container</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Search Container</h2>
+        <form action="/search" method="POST">
+            <label>Container Number</label>
+            <input type="text" name="number" required>
+            <button type="submit">Search</button>
+        </form>
+
+        <% if (result === false) { %>
+            <p>No container found.</p>
+            <% } else if (result) { %>
+                <div class="card">
+                    <p><b>Number:</b>
+                        <%= result.number %>
+                    </p>
+                    <p><b>Origin:</b>
+                        <%= result.origin %>
+                    </p>
+                    <p><b>Destination:</b>
+                        <%= result.destination %>
+                    </p>
+                    <p><b>Row:</b>
+                        <%= result.rowPos %> | <b>Col:</b>
+                            <%= result.colPos %>
+                    </p>
+                    <p><b>Owner:</b>
+                        <%= result.owner %>
+                    </p>
+                </div>
+                <% } %>
+    </div>
+</body>
+
+</html>
